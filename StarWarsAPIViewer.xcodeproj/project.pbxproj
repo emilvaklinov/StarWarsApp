@@ -11,6 +11,7 @@
 		48EC46A02A4DE05B002D5DC0 /* PlanetsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EC469F2A4DE05B002D5DC0 /* PlanetsCollectionView.swift */; };
 		48EC46A22A4DE694002D5DC0 /* PlanetsCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EC46A12A4DE694002D5DC0 /* PlanetsCollectionViewModel.swift */; };
 		48EC46AE2A4DFE80002D5DC0 /* PlanetDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EC46AD2A4DFE80002D5DC0 /* PlanetDetailViewModel.swift */; };
+		48EC46B02A4DFF6D002D5DC0 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EC46AF2A4DFF6D002D5DC0 /* RefreshControl.swift */; };
 		7E29D86926A6FFF9001034D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29D86826A6FFF9001034D1 /* AppDelegate.swift */; };
 		7E29D86B26A6FFF9001034D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29D86A26A6FFF9001034D1 /* SceneDelegate.swift */; };
 		7E29D87026A6FFF9001034D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E29D86E26A6FFF9001034D1 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		48EC469F2A4DE05B002D5DC0 /* PlanetsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsCollectionView.swift; sourceTree = "<group>"; };
 		48EC46A12A4DE694002D5DC0 /* PlanetsCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsCollectionViewModel.swift; sourceTree = "<group>"; };
 		48EC46AD2A4DFE80002D5DC0 /* PlanetDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailViewModel.swift; sourceTree = "<group>"; };
+		48EC46AF2A4DFF6D002D5DC0 /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		7E29D86526A6FFF9001034D1 /* StarWarsAPIViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsAPIViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E29D86826A6FFF9001034D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E29D86A26A6FFF9001034D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			children = (
 				48EC469F2A4DE05B002D5DC0 /* PlanetsCollectionView.swift */,
 				48EC46A12A4DE694002D5DC0 /* PlanetsCollectionViewModel.swift */,
+				48EC46AF2A4DFF6D002D5DC0 /* RefreshControl.swift */,
 			);
 			path = ListView;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				7E29D8A426A72A2A001034D1 /* PlanetsSnapshotProvider.swift in Sources */,
 				48EC469E2A4DDE06002D5DC0 /* PlanetDetailView.swift in Sources */,
 				7E29D8A226A71D78001034D1 /* Planet.swift in Sources */,
+				48EC46B02A4DFF6D002D5DC0 /* RefreshControl.swift in Sources */,
 				48EC46AE2A4DFE80002D5DC0 /* PlanetDetailViewModel.swift in Sources */,
 				7E29D8B126A87ADF001034D1 /* SpaceView.swift in Sources */,
 				48EC46A02A4DE05B002D5DC0 /* PlanetsCollectionView.swift in Sources */,

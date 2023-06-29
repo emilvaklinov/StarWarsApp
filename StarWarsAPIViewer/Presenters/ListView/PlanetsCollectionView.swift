@@ -26,39 +26,64 @@ struct PlanetsCollectionView: View {
                     }
                 }
                 .padding(.top, 20)
-                .onAppear {
-                    viewModel.fetchPlanets()
-                }
             }
             .navigationBarTitle("Planets")
-            .overlay(
-                RefreshControl(isRefreshing: $isRefreshing, onRefresh: {
+            .navigationBarItems(trailing:
+                Button(action: {
                     refreshData()
-                })
+                }) {
+                    Image(systemName: "arrow.clockwise")
+                }
             )
+            .overlay(
+                RefreshControl(isRefreshing: $isRefreshing) {
+                    refreshData()
+                }
+            )
+            .onAppear {
+                viewModel.fetchPlanets {
+                    print("Data Refreshed")
+                    isRefreshing = false
+                }
+            }
         }
     }
     
     private func refreshData() {
         isRefreshing = true
-        viewModel.fetchPlanets()
-        isRefreshing = false
-    }
-}
-
-struct RefreshControl: View {
-    @Binding var isRefreshing: Bool
-    let onRefresh: () -> Void
-    
-    var body: some View {
-        GeometryReader { geometry in
-            if isRefreshing {
-                ProgressView()
-                    .offset(y: -(geometry.size.height / 2))
-                    .foregroundColor(.gray)
+        viewModel.fetchPlanets {
+            DispatchQueue.main.async {
+                isRefreshing = false
+                print("Data Refreshed")
             }
         }
-        .frame(height: 0)
+    }
+    
+    private struct RefreshControl: View {
+        @Binding var isRefreshing: Bool
+        let onRefresh: () -> Void
+        
+        var body: some View {
+            GeometryReader { geometry in
+                VStack {
+                    if isRefreshing {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle())
+                            .foregroundColor(.gray)
+                            .padding(.top, 20)
+                    }
+                    
+                    Spacer()
+                }
+                .frame(height: geometry.size.height)
+                .offset(y: -geometry.size.height)
+                .onAppear {
+                    if isRefreshing {
+                        onRefresh()
+                    }
+                }
+            }
+        }
     }
 }
 

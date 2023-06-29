@@ -6,9 +6,9 @@
 //
 
 import XCTest
+@testable import StarWarsAPIViewer
 
 class ZNLSWAPIClientTests: XCTestCase {
 
     //TODO: Unit test the SWAPIClient
-
 }
