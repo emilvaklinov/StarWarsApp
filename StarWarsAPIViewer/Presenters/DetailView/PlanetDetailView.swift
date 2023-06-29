@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct PlanetDetailView: View {
-    let planet: Planet
+    var planet: Planet
     
     var body: some View {
         VStack {
             Text(planet.name)
                 .font(.title)
-                .padding()
             Text("Population: \(planet.population)")
                 .font(.subheadline)
-                .padding()
+                .foregroundColor(.secondary)
+            // Add more details or customizations as needed
         }
+        .navigationBarTitle(planet.name)
     }
 }
 

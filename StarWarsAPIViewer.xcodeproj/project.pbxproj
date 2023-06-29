@@ -3,19 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		48EC469E2A4DDE06002D5DC0 /* PlanetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EC469D2A4DDE06002D5DC0 /* PlanetDetailView.swift */; };
 		48EC46A02A4DE05B002D5DC0 /* PlanetsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EC469F2A4DE05B002D5DC0 /* PlanetsCollectionView.swift */; };
+		48EC46A22A4DE694002D5DC0 /* PlanetsCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EC46A12A4DE694002D5DC0 /* PlanetsCollectionViewModel.swift */; };
 		7E29D86926A6FFF9001034D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29D86826A6FFF9001034D1 /* AppDelegate.swift */; };
 		7E29D86B26A6FFF9001034D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29D86A26A6FFF9001034D1 /* SceneDelegate.swift */; };
 		7E29D87026A6FFF9001034D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E29D86E26A6FFF9001034D1 /* Main.storyboard */; };
 		7E29D87226A6FFFC001034D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E29D87126A6FFFC001034D1 /* Assets.xcassets */; };
 		7E29D87526A6FFFC001034D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E29D87326A6FFFC001034D1 /* LaunchScreen.storyboard */; };
 		7E29D89B26A70C1A001034D1 /* ZNLSWAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E29D89A26A70C1A001034D1 /* ZNLSWAPIClient.m */; };
-		7E29D89F26A71C61001034D1 /* PlanetsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29D89E26A71C61001034D1 /* PlanetsCollectionViewController.swift */; };
 		7E29D8A226A71D78001034D1 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29D8A126A71D78001034D1 /* Planet.swift */; };
 		7E29D8A426A72A2A001034D1 /* PlanetsSnapshotProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29D8A326A72A2A001034D1 /* PlanetsSnapshotProvider.swift */; };
 		7E29D8A626A73243001034D1 /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29D8A526A73243001034D1 /* Planets.swift */; };
@@ -37,6 +37,7 @@
 /* Begin PBXFileReference section */
 		48EC469D2A4DDE06002D5DC0 /* PlanetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailView.swift; sourceTree = "<group>"; };
 		48EC469F2A4DE05B002D5DC0 /* PlanetsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsCollectionView.swift; sourceTree = "<group>"; };
+		48EC46A12A4DE694002D5DC0 /* PlanetsCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsCollectionViewModel.swift; sourceTree = "<group>"; };
 		7E29D86526A6FFF9001034D1 /* StarWarsAPIViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsAPIViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E29D86826A6FFF9001034D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E29D86A26A6FFF9001034D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +50,6 @@
 		7E29D89826A70C1A001034D1 /* StarWarsAPIViewer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StarWarsAPIViewer-Bridging-Header.h"; sourceTree = "<group>"; };
 		7E29D89926A70C1A001034D1 /* ZNLSWAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNLSWAPIClient.h; sourceTree = "<group>"; };
 		7E29D89A26A70C1A001034D1 /* ZNLSWAPIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNLSWAPIClient.m; sourceTree = "<group>"; };
-		7E29D89E26A71C61001034D1 /* PlanetsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsCollectionViewController.swift; sourceTree = "<group>"; };
 		7E29D8A126A71D78001034D1 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		7E29D8A326A72A2A001034D1 /* PlanetsSnapshotProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsSnapshotProvider.swift; sourceTree = "<group>"; };
 		7E29D8A526A73243001034D1 /* Planets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planets.swift; sourceTree = "<group>"; };
@@ -76,6 +76,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48EC46A32A4DE902002D5DC0 /* ListView */ = {
+			isa = PBXGroup;
+			children = (
+				48EC469F2A4DE05B002D5DC0 /* PlanetsCollectionView.swift */,
+				48EC46A12A4DE694002D5DC0 /* PlanetsCollectionViewModel.swift */,
+			);
+			path = ListView;
+			sourceTree = "<group>";
+		};
+		48EC46A42A4DE9C9002D5DC0 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				48EC469D2A4DDE06002D5DC0 /* PlanetDetailView.swift */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
+		48EC46A52A4DEA08002D5DC0 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				7E29D86826A6FFF9001034D1 /* AppDelegate.swift */,
+				7E29D86A26A6FFF9001034D1 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		7E29D85C26A6FFF9001034D1 = {
 			isa = PBXGroup;
 			children = (
@@ -97,13 +123,11 @@
 		7E29D86726A6FFF9001034D1 /* StarWarsAPIViewer */ = {
 			isa = PBXGroup;
 			children = (
-				7E29D92A26A96D79001034D1 /* Views */,
-				7E29D8AA26A81DE1001034D1 /* Data Source */,
-				7E29D8A926A81DD3001034D1 /* View Controllers */,
-				7E29D8A826A81DC2001034D1 /* Model */,
+				48EC46A52A4DEA08002D5DC0 /* Delegates */,
 				7E29D8A726A81DB5001034D1 /* API Client */,
-				7E29D86826A6FFF9001034D1 /* AppDelegate.swift */,
-				7E29D86A26A6FFF9001034D1 /* SceneDelegate.swift */,
+				7E29D8AA26A81DE1001034D1 /* Data Source */,
+				7E29D8A826A81DC2001034D1 /* Model */,
+				7E29D8A926A81DD3001034D1 /* Presenters */,
 				7E29D86E26A6FFF9001034D1 /* Main.storyboard */,
 				7E29D87126A6FFFC001034D1 /* Assets.xcassets */,
 				7E29D87326A6FFFC001034D1 /* LaunchScreen.storyboard */,
@@ -140,14 +164,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		7E29D8A926A81DD3001034D1 /* View Controllers */ = {
+		7E29D8A926A81DD3001034D1 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				7E29D89E26A71C61001034D1 /* PlanetsCollectionViewController.swift */,
-				48EC469D2A4DDE06002D5DC0 /* PlanetDetailView.swift */,
-				48EC469F2A4DE05B002D5DC0 /* PlanetsCollectionView.swift */,
+				7E29D92A26A96D79001034D1 /* CpaceView */,
+				48EC46A32A4DE902002D5DC0 /* ListView */,
+				48EC46A42A4DE9C9002D5DC0 /* DetailView */,
 			);
-			path = "View Controllers";
+			path = Presenters;
 			sourceTree = "<group>";
 		};
 		7E29D8AA26A81DE1001034D1 /* Data Source */ = {
@@ -158,13 +182,13 @@
 			path = "Data Source";
 			sourceTree = "<group>";
 		};
-		7E29D92A26A96D79001034D1 /* Views */ = {
+		7E29D92A26A96D79001034D1 /* CpaceView */ = {
 			isa = PBXGroup;
 			children = (
 				7E29D8B026A87ADF001034D1 /* SpaceView.swift */,
 				7E29D92826A969D2001034D1 /* SpaceshipView.swift */,
 			);
-			path = Views;
+			path = CpaceView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,8 +235,9 @@
 		7E29D85D26A6FFF9001034D1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					7E29D86426A6FFF9001034D1 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -268,8 +293,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48EC46A22A4DE694002D5DC0 /* PlanetsCollectionViewModel.swift in Sources */,
 				7E29D86926A6FFF9001034D1 /* AppDelegate.swift in Sources */,
-				7E29D89F26A71C61001034D1 /* PlanetsCollectionViewController.swift in Sources */,
 				7E29D8A426A72A2A001034D1 /* PlanetsSnapshotProvider.swift in Sources */,
 				48EC469E2A4DDE06002D5DC0 /* PlanetDetailView.swift in Sources */,
 				7E29D8A226A71D78001034D1 /* Planet.swift in Sources */,
