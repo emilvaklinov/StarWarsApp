@@ -11,7 +11,6 @@ import SwiftUI
 class SpaceView: UIView {
     
     private static var starImage: UIImage = {
-        
         let rect = CGRect(origin: .zero, size: CGSize(width: 50, height: 50))
         let renderer = UIGraphicsImageRenderer(bounds: rect)
         let image = renderer.image { context in
@@ -42,8 +41,6 @@ class SpaceView: UIView {
         starEmitterCell.velocityRange = 99
         starEmitterCell.scale = 0.0001
         starEmitterCell.scaleRange = 0.1
-        //starEmitterCell.xAcceleration = -70
-
         
         return starEmitterCell
     }()
@@ -53,6 +50,12 @@ class SpaceView: UIView {
                                         selector: #selector(updateShipPosition))
         
         return displayLink
+    }()
+    
+    private lazy var planetsCollectionView: UIHostingController<PlanetsCollectionView> = {
+        var planetsCollectionView = PlanetsCollectionView()
+        planetsCollectionView.delegate = self
+        return UIHostingController(rootView: planetsCollectionView)
     }()
     
     private let shipImageDimension: CGFloat = 50
@@ -71,7 +74,7 @@ class SpaceView: UIView {
         layer.addSublayer(starLayer)
         displayLink.add(to: .current, forMode: .default)
         addSubview(spaceshipView)
-        addSubview(planetsButton) // Add the button as a subview
+        addSubview(planetsButton)
     }
     
     override func layoutSubviews() {
@@ -107,12 +110,16 @@ class SpaceView: UIView {
         let newY = max(min(previousFrame.origin.y + shipDeltaY, frame.maxY - shipImageDimension), 0)
         let newX = max(min(previousFrame.origin.x + shipDeltaX, frame.maxX - shipImageDimension), 0)
         spaceshipView.frame = CGRect(x: newX, y: newY, width: shipImageDimension, height: shipImageDimension)
-        
     }
     
     @objc private func didTapPlanetsButton() {
-        let planetsCollectionView = UIHostingController(rootView: PlanetsCollectionView())
         planetsCollectionView.modalPresentationStyle = .fullScreen
         UIApplication.shared.windows.first?.rootViewController?.present(planetsCollectionView, animated: true, completion: nil)
+    }
+}
+
+extension SpaceView: PlanetsCollectionViewDelegate {
+    func planetsCollectionViewDidRequestDismissal() {
+        planetsCollectionView.dismiss(animated: true, completion: nil)
     }
 }

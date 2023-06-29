@@ -7,10 +7,21 @@
 
 import SwiftUI
 
+
+protocol PlanetsCollectionViewDelegate: AnyObject {
+    func planetsCollectionViewDidRequestDismissal()
+}
+
 struct PlanetsCollectionView: View {
+    weak var delegate: PlanetsCollectionViewDelegate?
+    
     @StateObject private var viewModel = PlanetsCollectionViewModel()
     @State private var selectedPlanet: Planet? = nil
     @State private var isRefreshing = false
+    
+    private func dismiss() {
+        delegate?.planetsCollectionViewDidRequestDismissal()
+    }
     
     var body: some View {
         NavigationView {
@@ -33,6 +44,13 @@ struct PlanetsCollectionView: View {
                     refreshData()
                 }) {
                     Image(systemName: "arrow.clockwise")
+                }
+            )
+            .navigationBarItems(leading:
+                Button(action: {
+                dismiss()
+                }) {
+                    Image(systemName: "arrowshape.backward")
                 }
             )
             .overlay(
