@@ -8,20 +8,24 @@
 import SwiftUI
 
 struct PlanetDetailView: View {
-    var planet: Planet
+    @StateObject private var viewModel: PlanetDetailViewModel
+    
+    init(planet: Planet) {
+        _viewModel = StateObject(wrappedValue: PlanetDetailViewModel(planet: planet))
+    }
     
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
-            Text(planet.name)
+            Text(viewModel.planet.name)
                 .font(.title).bold()
-            Text("Population: \(planet.population)")
+            Text("Population: \(viewModel.planet.population)")
                 .font(.headline)
                 .foregroundColor(.secondary)
-            Text("Terrain: \(planet.terrain)")
+            Text("Terrain: \(viewModel.planet.terrain)")
                 .font(.headline)
                 .foregroundColor(.secondary)
         }
         .padding()
-        .navigationBarTitle(planet.name)
+        .navigationBarTitle(viewModel.planet.name)
     }
 }
