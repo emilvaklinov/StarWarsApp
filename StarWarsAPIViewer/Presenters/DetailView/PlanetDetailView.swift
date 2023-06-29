@@ -11,20 +11,17 @@ struct PlanetDetailView: View {
     var planet: Planet
     
     var body: some View {
-        VStack {
+        VStack(alignment: .center, spacing: 10) {
             Text(planet.name)
-                .font(.title)
+                .font(.title).bold()
             Text("Population: \(planet.population)")
-                .font(.subheadline)
+                .font(.headline)
                 .foregroundColor(.secondary)
-            // Add more details or customizations as needed
+            Text("Terrain: \(planet.terrain)")
+                .font(.headline)
+                .foregroundColor(.secondary)
         }
+        .padding()
         .navigationBarTitle(planet.name)
     }
 }
-
-//struct PlanetDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PlanetDetailView(planet: "po")
-//    }
-//}
