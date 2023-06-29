@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SpaceView: UIView {
     
@@ -68,15 +69,27 @@ class SpaceView: UIView {
         super.init(coder: coder)
         backgroundColor = .black
         layer.addSublayer(starLayer)
-        displayLink.add(to: .current,
-                        forMode: .default)
+        displayLink.add(to: .current, forMode: .default)
         addSubview(spaceshipView)
+        addSubview(planetsButton) // Add the button as a subview
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         spaceshipView.frame = CGRect(origin: CGPoint(x: frame.midX - (shipImageDimension / 2), y: frame.maxY - shipImageDimension), size: CGSize(width: shipImageDimension, height: shipImageDimension))
+        
+        planetsButton.frame = CGRect(x: bounds.width * 0.5 - 100, y: bounds.height * 0.5 - 25, width: 200, height: 50)
     }
+    
+    private lazy var planetsButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Browse Planets...", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .purple
+        button.layer.cornerRadius = 8
+        button.addTarget(self, action: #selector(didTapPlanetsButton), for: .touchUpInside)
+        return button
+    }()
     
     @objc func updateShipPosition(_ displayLink: CADisplayLink) {
         
@@ -96,5 +109,10 @@ class SpaceView: UIView {
         spaceshipView.frame = CGRect(x: newX, y: newY, width: shipImageDimension, height: shipImageDimension)
         
     }
-
+    
+    @objc private func didTapPlanetsButton() {
+        let planetsCollectionView = UIHostingController(rootView: PlanetsCollectionView())
+        planetsCollectionView.modalPresentationStyle = .fullScreen
+        UIApplication.shared.windows.first?.rootViewController?.present(planetsCollectionView, animated: true, completion: nil)
+    }
 }

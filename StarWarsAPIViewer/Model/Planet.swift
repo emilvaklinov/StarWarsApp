@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Planet: Hashable, Codable {
-
+struct Planet: Hashable, Codable, Identifiable {
+    let id = UUID()
     let name: String
     let terrain: String
     let population: String
