@@ -17,7 +17,7 @@ class PlanetsCollectionViewModel: ObservableObject {
         planetFetcher.onSnapshotUpdate = { snapshot in
             DispatchQueue.main.async {
                 self.planets = snapshot.itemIdentifiers
-                completion() // Call the completion closure
+                completion()
             }
         }
     }

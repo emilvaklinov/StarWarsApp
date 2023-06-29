@@ -7,18 +7,29 @@
 
 import SwiftUI
 
-//struct RefreshControl: View {
-//    @Binding var isRefreshing: Bool
-//    let onRefresh: () -> Void
-//    
-//    var body: some View {
-//        GeometryReader { geometry in
-//            if isRefreshing {
-//                ProgressView()
-//                    .offset(y: -(geometry.size.height / 2))
-//                    .foregroundColor(.gray)
-//            }
-//        }
-//        .frame(height: 0)
-//    }
-//}
+struct RefreshControl: View {
+    @Binding var isRefreshing: Bool
+    let onRefresh: () -> Void
+    
+    var body: some View {
+        GeometryReader { geometry in
+            VStack {
+                if isRefreshing {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .foregroundColor(.gray)
+                        .padding(.top, 20)
+                }
+                
+                Spacer()
+            }
+            .frame(height: geometry.size.height)
+            .offset(y: -geometry.size.height)
+            .onAppear {
+                if isRefreshing {
+                    onRefresh()
+                }
+            }
+        }
+    }
+}

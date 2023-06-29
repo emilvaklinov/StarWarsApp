@@ -58,33 +58,6 @@ struct PlanetsCollectionView: View {
             }
         }
     }
-    
-    private struct RefreshControl: View {
-        @Binding var isRefreshing: Bool
-        let onRefresh: () -> Void
-        
-        var body: some View {
-            GeometryReader { geometry in
-                VStack {
-                    if isRefreshing {
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle())
-                            .foregroundColor(.gray)
-                            .padding(.top, 20)
-                    }
-                    
-                    Spacer()
-                }
-                .frame(height: geometry.size.height)
-                .offset(y: -geometry.size.height)
-                .onAppear {
-                    if isRefreshing {
-                        onRefresh()
-                    }
-                }
-            }
-        }
-    }
 }
 
 struct PlanetsCollectionView_Previews: PreviewProvider {
