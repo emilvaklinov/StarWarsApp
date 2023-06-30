@@ -9,9 +9,9 @@ import Foundation
 
 struct Planet: Hashable, Codable, Identifiable {
     let id: UUID
-    let name: String
-    let terrain: String
-    let population: String
+    var name: String
+    var terrain: String
+    var population: String
 
     init(id: UUID = UUID(), name: String, terrain: String, population: String) {
         self.id = id
