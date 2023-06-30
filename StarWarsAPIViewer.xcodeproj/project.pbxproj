@@ -42,6 +42,7 @@
 		48EC46A12A4DE694002D5DC0 /* PlanetsCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsCollectionViewModel.swift; sourceTree = "<group>"; };
 		48EC46AD2A4DFE80002D5DC0 /* PlanetDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailViewModel.swift; sourceTree = "<group>"; };
 		48EC46AF2A4DFF6D002D5DC0 /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
+		48EC46B32A4F0EDC002D5DC0 /* StarWarsAPIViewer.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = StarWarsAPIViewer.xctestplan; sourceTree = "<group>"; };
 		7E29D86526A6FFF9001034D1 /* StarWarsAPIViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsAPIViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E29D86826A6FFF9001034D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E29D86A26A6FFF9001034D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +112,7 @@
 		7E29D85C26A6FFF9001034D1 = {
 			isa = PBXGroup;
 			children = (
+				48EC46B32A4F0EDC002D5DC0 /* StarWarsAPIViewer.xctestplan */,
 				7E29D86726A6FFF9001034D1 /* StarWarsAPIViewer */,
 				7E29D87E26A6FFFC001034D1 /* StarWarsAPIViewerTests */,
 				7E29D86626A6FFF9001034D1 /* Products */,

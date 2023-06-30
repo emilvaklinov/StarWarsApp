@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "ECC7C7CE-D3D7-4606-9A09-AAAC37C41AF5",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:StarWarsAPIViewer.xcodeproj",
+      "identifier" : "7E29D86426A6FFF9001034D1",
+      "name" : "StarWarsAPIViewer"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:StarWarsAPIViewer.xcodeproj",
+        "identifier" : "7E29D87A26A6FFFC001034D1",
+        "name" : "StarWarsAPIViewerTests"
+      }
+    }
+  ],
+  "version" : 1
+}
